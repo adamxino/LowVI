@@ -1,7 +1,7 @@
-# VIctory
+# LowVI
 
 Runs Grand Theft Auto VI (Xbox Series X|S) natively on Windows, from files
-the user supplies.
+the user supplies. The goal is to make it running on low-end PC.
 
 The title's x86-64 code runs unchanged inside our process; VIctory supplies
 the platform underneath it and converts the title's data, ahead of time where
@@ -15,13 +15,13 @@ loads the world, where rendering fails.
 
 | Stage | State |
 |-------|-------|
-| Boot, first-boot screens (accessibility, language, settings, legal) | works, 30 fps |
-| Intro video with sound | works |
-| Start screen, profile and saves | works |
-| Loading into the world (about 50 s) | works |
-| The world (first mission's intro) | reached and runs with indirect draws; its title card renders, the scene after it is still dark; 0.5-1.8 s per frame |
+| Boot, first-boot screens (accessibility, language, settings, legal) | some parts are black screen |
+| Intro video with sound | not fully work |
+| Start screen, profile and saves | not load |
+| Loading into the world (about 50 s) | not load |
+| The world (first mission's intro) | not load |
 
-Tested on one machine: Windows 11, AMD RX 6700 XT.
+Tested on one machine: Windows 11, Intel UHD Graphics 630.
 
 > **Warning.** Entering the world on a real GPU can currently hang it, and
 > Windows then resets the display driver (every monitor goes black for a
@@ -43,6 +43,12 @@ What each part does today and what it still needs:
 | Shaders | Console GPU code recompiled to DXIL at first use, cached on disk. Menus: all. World: mesh 8,191 of 8,506, vertex/pixel 10,617 of 12,346, compute 1,643 of 2,539 | 64-bit image atomics, merged geometry stages, the ray-tracing builder's shaders; some compute programs need a GPU with 64-lane waves |
 | Textures | Console tiled layouts and detiling for the modes the title uses | Render-target metadata planes |
 | Series S mode | Runs through the menus to the loading screen | The world, as above |
+
+## Screenshots
+Some boot pic.
+<p align="center">
+  <img src="media/Screenshot%20(650).png" alt="First boot.">
+</p>
 
 ## Getting started
 
