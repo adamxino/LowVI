@@ -1,12 +1,14 @@
 # LowVI
 
 Runs Grand Theft Auto VI (Xbox Series X|S) natively on Windows, from files
-the user supplies. The goal is to make it running on low-end PC.
+the user supplies. The goal is to make it running on low-end PC. Brand new project by reGRAND.
 
 The title's x86-64 code runs unchanged inside our process; VIctory supplies
 the platform underneath it and converts the title's data, ahead of time where
 it can and on first use where it must (shaders). See
 [docs/architecture.md](docs/architecture.md).
+
+Discord: https://discord.gg/MzFABxxSq7
 
 ## Status (2026-11-23)
 
